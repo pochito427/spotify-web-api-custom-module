@@ -1,0 +1,14 @@
+{
+  "name": "drupal/spotify_client",
+  "type": "drupal-module",
+  "description": "HTTP Client of Spotify. Test Ariadna",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://github.com/pochito427/spotify-web-api-custom-module",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://github.com/pochito427/spotify-web-api-custom-module/issues",
+    "source": "https://github.com/pochito427/spotify-web-api-custom-module"
+  },
+  "require": { }
+}

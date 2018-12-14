@@ -1,0 +1,6 @@
+spotify_client.new-releases:
+  title: Lanzamientos
+  description: 'Últimos lanzamientos'
+  route_name: spotify_client.new-releases
+  menu_name: main
+  weight: 1
