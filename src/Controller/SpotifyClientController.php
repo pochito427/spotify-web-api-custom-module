@@ -26,11 +26,11 @@ class SpotifyClientController extends ControllerBase
      * Autenticación
      * @return mixed|void
      */
-    private function autorization()
+    private function authorization()
     {
 
         try {
-            $autorization = $this->client->request('POST', 'https://accounts.spotify.com/api/token', [
+            $authorization = $this->client->request('POST', 'https://accounts.spotify.com/api/token', [
                 'form_params' => [
                     'grant_type' => 'client_credentials',
                     'client_id' => '2edd06339a844ce1a95d978f1cf61e04',
@@ -38,7 +38,7 @@ class SpotifyClientController extends ControllerBase
                 ]
             ]);
 
-            return $response = json_decode($autorization->getBody());
+            return $response = json_decode($authorization->getBody());
         } catch (GuzzleException $e) {
             return \Drupal::logger('spotify_cliernt')->error($e);
         }
@@ -51,7 +51,7 @@ class SpotifyClientController extends ControllerBase
     public function newReleases()
     {
 
-        $auth = $this->autorization();
+        $auth = $this->authorization();
 
         try {
             $request = $this->client->request('GET', 'https://api.spotify.com/v1/browse/new-releases', [
@@ -81,7 +81,7 @@ class SpotifyClientController extends ControllerBase
     public function artist($id)
     {
 
-        $auth = $this->autorization();
+        $auth = $this->authorization();
 
         try {
             $requestArtist = $this->client->request('GET', 'https://api.spotify.com/v1/artists/' . $id, [
